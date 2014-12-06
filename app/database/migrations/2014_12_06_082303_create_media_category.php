@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateMediaviewCategory extends Migration {
+class CreateMediaCategory extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,12 +11,12 @@ class CreateMediaviewCategory extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::table('mediaview_category', function (Blueprint $table) {
+		Schema::create('media_category', function (Blueprint $table) {
 				$table->increments('id');
-				$table->string('name')->nullable();
+				$table->string('name');
 				$table->string('slug')->nullable();
+				$table->string('options')->nullable();
 				$table->timestamps();
-				$table->string('user_role')->nullable();
 			});
 	}
 
@@ -26,9 +26,7 @@ class CreateMediaviewCategory extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::table('mediaview_category', function (Blueprint $table) {
-				//
-			});
+		Schema::drop('media_category');
 	}
 
 }

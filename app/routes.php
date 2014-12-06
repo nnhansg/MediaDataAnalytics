@@ -70,17 +70,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 
 		# Admin Dashboard
 		Route::controller('/', 'AdminDashboardController');
-
-		# Category
-		Route::get('mediacategory/list', 'AdminMediaViewCategoryController@getIndex');
-		Route::controller('mediacategory', 'AdminMediaViewCategoryController');
-		Route::get('test/1', 'TestController@getIndex');
-		Route::get('33', 'AdminBlogsController@getIndex');
-		Route::post('33', 'AdminBlogsController@getIndex');
 	});
 
 Route::group(array('prefix' => 'media'), function () {
-		Route::get('33', 'AdminBlogsController@getIndex');
+		Route::get('/category/list', 'MediaCategoryController@getIndex');
+		// Route::controller('category', 'MediaCategoryController');
 	});
 /** ------------------------------------------
  *  Frontend Routes
