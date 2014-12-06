@@ -11,7 +11,7 @@ class CreateMediaviewCategory extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::create('mediaview_category', function (Blueprint $table) {
+		Schema::table('mediaview_category', function (Blueprint $table) {
 				$table->increments('id');
 				$table->string('name')->nullable();
 				$table->string('slug')->nullable();

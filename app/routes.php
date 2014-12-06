@@ -70,8 +70,18 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 
 		# Admin Dashboard
 		Route::controller('/', 'AdminDashboardController');
+
+		# Category
+		Route::get('mediacategory/list', 'AdminMediaViewCategoryController@getIndex');
+		Route::controller('mediacategory', 'AdminMediaViewCategoryController');
+		Route::get('test/1', 'TestController@getIndex');
+		Route::get('33', 'AdminBlogsController@getIndex');
+		Route::post('33', 'AdminBlogsController@getIndex');
 	});
 
+Route::group(array('prefix' => 'media'), function () {
+		Route::get('33', 'AdminBlogsController@getIndex');
+	});
 /** ------------------------------------------
  *  Frontend Routes
  *  ------------------------------------------
@@ -107,3 +117,5 @@ Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
 Route::get('/', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
+
+Route::get('/test/1', 'TestController@getIndex');
