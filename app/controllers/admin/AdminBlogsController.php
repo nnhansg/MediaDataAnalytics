@@ -220,8 +220,4 @@ class AdminBlogsController extends AdminController {
 			->make();
 	}
 
-	public function getTam() {
-		return "Tam Nguyen";
-	}
-
 }

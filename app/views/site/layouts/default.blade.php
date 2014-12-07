@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
-			Laravel 4 Sample Site
+			Media Data Analytics
 			@show
 		</title>
 		@section('meta_keywords')

@@ -74,7 +74,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 
 Route::group(array('prefix' => 'media'), function () {
 		Route::get('/category/list', 'MediaCategoryController@getIndex');
-		// Route::controller('category', 'MediaCategoryController');
+		Route::controller('category', 'MediaCategoryController');
 	});
 /** ------------------------------------------
  *  Frontend Routes

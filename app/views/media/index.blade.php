@@ -21,13 +21,13 @@
         </h3>
     </div>
 
-    <table id="blogs" class="table table-striped table-hover">
+    <table id="media" class="table table-striped table-hover">
         <thead>
             <tr>
-                <th class="col-md-4">{{{ Lang::get('admin/blogs/table.title') }}}111</th>
-                <th class="col-md-2">{{{ Lang::get('admin/blogs/table.comments') }}}222</th>
-                <th class="col-md-2">{{{ Lang::get('admin/blogs/table.created_at') }}}333</th>
-                <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.slug') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.created_at') }}}</th>
+                <!-- <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th> -->
             </tr>
         </thead>
         <tbody>
@@ -40,15 +40,15 @@
     <script type="text/javascript">
         var oTable;
         $(document).ready(function() {
-            oTable = $('#blogs').dataTable( {
-                "sDom": "<'row'<'col-md-6'l><'col-md-6 aaa'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+            oTable = $('#media').dataTable( {
+                "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page 222"
+                    "sLengthMenu": "_MENU_ records per page [media]"
                 },
                 "bProcessing": true,
                 "bServerSide": true,
-                "sAjaxSource": "{{ URL::to('admin/blogs/data') }}",
+                "sAjaxSource": "{{ URL::to('media/category/data') }}",
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                 }
