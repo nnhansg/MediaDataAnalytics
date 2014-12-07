@@ -74,6 +74,9 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 
 Route::group(array('prefix' => 'media'), function () {
 		Route::get('/category/list', 'MediaCategoryController@getIndex');
+		Route::get('/category/create', 'MediaCategoryController@getCreate');
+		Route::get('/category/{category}/edit', 'MediaCategoryController@getEdit');
+		Route::post('/category/{category}/edit', 'MediaCategoryController@getEdit');
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
 	});
