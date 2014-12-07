@@ -75,6 +75,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 Route::group(array('prefix' => 'media'), function () {
 		Route::get('/category/list', 'MediaCategoryController@getIndex');
 		Route::controller('category', 'MediaCategoryController');
+		Route::controller('article', 'MediaArticleController');
 	});
 /** ------------------------------------------
  *  Frontend Routes
@@ -111,5 +112,3 @@ Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
 Route::get('/', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
-
-Route::get('/test/1', 'TestController@getIndex');

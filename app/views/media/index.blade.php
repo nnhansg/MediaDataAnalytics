@@ -5,9 +5,9 @@
 {{{ $title }}} :: @parent
 @stop
 
-@section('keywords')Blogs administration @stop
+@section('keywords')DALO administration @stop
 @section('author')nhantamio @stop
-@section('description')Blogs administration index @stop
+@section('description')DALO administration @stop
 
 {{-- Content --}}
 @section('content')
