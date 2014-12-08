@@ -75,8 +75,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function () {
 Route::group(array('prefix' => 'media'), function () {
 		Route::get('/category/list', 'MediaCategoryController@getIndex');
 		Route::get('/category/create', 'MediaCategoryController@getCreate');
-		Route::get('/category/{category}/edit', 'MediaCategoryController@getEdit');
-		Route::post('/category/{category}/edit', 'MediaCategoryController@getEdit');
+		Route::get('/category/{category_id}/edit', 'MediaCategoryController@getEdit');
+		Route::post('/category/{category_id}/edit', 'MediaCategoryController@postEdit');
+		Route::get('/category/{category_id}/delete', 'MediaCategoryController@getDelete');
+		Route::post('/category/{category_id}/delete', 'MediaCategoryController@postDelete');
+		Route::get('/article/list', 'MediaArticleController@getIndex');
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
 	});

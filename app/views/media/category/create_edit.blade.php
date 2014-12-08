@@ -5,7 +5,6 @@
   <!-- Tabs -->
     <ul class="nav nav-tabs">
       <li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
-      <li><a href="#tab-meta-data" data-toggle="tab">Meta data</a></li>
     </ul>
   <!-- ./ tabs -->
 
@@ -30,11 +29,11 @@
         <!-- ./ category name -->
 
         <!-- Category slug -->
-        <div class="form-group {{{ $errors->has('name') ? 'error' : '' }}}">
+        <div class="form-group {{{ $errors->has('slug') ? 'error' : '' }}}">
                     <div class="col-md-12">
-                        <label class="control-label" for="name">Category name</label>
-            <input class="form-control" type="text" name="name" id="name" value="{{{ Input::old('name', isset($category) ? $category->name : null) }}}" />
-            {{{ $errors->first('name', '<span class="help-block">:message</span>') }}}
+                        <label class="control-label" for="slug">Slug</label>
+            <input class="form-control" type="text" name="slug" id="slug" value="{{{ Input::old('slug', isset($category) ? $category->slug : null) }}}" />
+            {{{ $errors->first('slug', '<span class="help-block">:message</span>') }}}
           </div>
         </div>
         <!-- ./ category slug -->
@@ -43,7 +42,7 @@
         <div class="form-group {{{ $errors->has('options') ? 'has-error' : '' }}}">
           <div class="col-md-12">
                         <label class="control-label" for="options">Options</label>
-            <textarea class="form-control full-width wysihtml5" name="options" value="options" rows="10">{{{ Input::old('options', isset($category) ? $category->option : null) }}}</textarea>
+            <input class="form-control full-width" name="options" value="options" rows="10">{{{ Input::old('options', isset($category) ? $category->option : null) }}}</input>
             {{{ $errors->first('options', '<span class="help-block">:message</span>') }}}
           </div>
         </div>
@@ -56,9 +55,9 @@
     <!-- Form Actions -->
     <div class="form-group">
       <div class="col-md-12">
-        <element class="btn-cancel close_popup">Cancel</element>
+        <!-- <element class="btn-cancel close_popup">Cancel</element> -->
         <button type="reset" class="btn btn-default">Reset</button>
-        <button type="submit" class="btn btn-success">Update</button>
+        <button type="submit" class="btn btn-success">Save</button>
       </div>
     </div>
     <!-- ./ form actions -->

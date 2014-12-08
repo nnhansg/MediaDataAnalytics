@@ -16,7 +16,7 @@
             {{{ $title }}}
 
             <div class="pull-right">
-                <a href="{{{ URL::to('admin/blogs/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create 9999</a>
+                <a href="{{{ URL::to('media/category/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
             </div>
         </h3>
     </div>
@@ -27,7 +27,7 @@
                 <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.slug') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.created_at') }}}</th>
-                <!-- <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th> -->
+                <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
             </tr>
         </thead>
         <tbody>

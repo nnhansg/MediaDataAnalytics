@@ -1,6 +1,7 @@
 <?php
 class MediaArticleController extends AdminController {
 	public function getIndex() {
-		return "Media Article";
+		$title = 'Media Article';
+		return View::make('media/article/index', compact('title'));
 	}
 }
