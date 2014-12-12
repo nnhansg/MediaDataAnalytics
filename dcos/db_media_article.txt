@@ -1,0 +1,41 @@
+mysql> describe media_article;
++------------------+------------------+------+-----+---------------------+----------------+
+| Field            | Type             | Null | Key | Default             | Extra          |
++------------------+------------------+------+-----+---------------------+----------------+
+| id               | int(10) unsigned | NO   | PRI | NULL                | auto_increment |
+| name             | varchar(255)     | YES  | MUL | NULL                |                |
+| content          | varchar(255)     | YES  |     | NULL                |                |
+| category_ids     | varchar(255)     | NO   |     |                     |                |
+| category_names   | varchar(255)     | NO   |     |                     |                |
+| category_sids    | varchar(255)     | NO   |     |                     |                |
+| main_cat         | varchar(255)     | NO   |     |                     |                |
+| company_brand    | varchar(255)     | NO   |     |                     |                |
+| sub_cat_main_ind | varchar(255)     | YES  |     | NULL                |                |
+| sub_ind_headline | varchar(255)     | YES  |     | NULL                |                |
+| original_link    | varchar(255)     | YES  |     | NULL                |                |
+| fileName         | varchar(255)     | YES  |     | NULL                |                |
+| media_title      | varchar(255)     | YES  |     | NULL                |                |
+| media_type       | varchar(255)     | YES  |     | NULL                |                |
+| lang             | varchar(255)     | YES  |     | NULL                |                |
+| freq             | varchar(255)     | YES  |     | NULL                |                |
+| circulation      | varchar(255)     | YES  |     | NULL                |                |
+| readership_type  | varchar(255)     | YES  |     | NULL                |                |
+| section_color    | varchar(255)     | YES  |     | NULL                |                |
+| page             | varchar(255)     | YES  |     | NULL                |                |
+| article          | varchar(255)     | YES  |     | NULL                |                |
+| size_duration    | varchar(255)     | YES  |     | NULL                |                |
+| total_size       | varchar(255)     | YES  |     | NULL                |                |
+| advalue          | int(10) unsigned | NO   |     | 0                   |                |
+| mention          | int(10) unsigned | NO   |     | 0                   |                |
+| prvalue          | int(10) unsigned | NO   |     | 0                   |                |
+| journalist       | varchar(255)     | YES  |     | NULL                |                |
+| photono          | varchar(255)     | YES  |     | NULL                |                |
+| spoke            | varchar(255)     | YES  |     | NULL                |                |
+| person           | varchar(255)     | YES  |     | NULL                |                |
+| tone             | varchar(255)     | YES  |     | NULL                |                |
+| gist             | varchar(255)     | YES  |     | NULL                |                |
+| source           | varchar(255)     | YES  |     | NULL                |                |
+| created_at       | timestamp        | NO   |     | 0000-00-00 00:00:00 |                |
+| updated_at       | timestamp        | NO   |     | 0000-00-00 00:00:00 |                |
++------------------+------------------+------+-----+---------------------+----------------+
+35 rows in set (0.03 sec)

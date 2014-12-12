@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddCollectedDataDateToMediaArticle' => $baseDir . '/app/database/migrations/2014_12_08_063727_add_collected_data_date_to_media_article.php',
     'AdminBlogsController' => $baseDir . '/app/controllers/admin/AdminBlogsController.php',
     'AdminCommentsController' => $baseDir . '/app/controllers/admin/AdminCommentsController.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',

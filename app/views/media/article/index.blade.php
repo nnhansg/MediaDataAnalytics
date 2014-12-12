@@ -25,8 +25,20 @@
         <thead>
             <tr>
                 <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.slug') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.created_at') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.main_cat') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.company_brand') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.sub_cat_main_ind') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.sub_ind_headline') }}}</th>
+                <!-- <th class="col-md-2">{{{ Lang::get('media/table.original_link') }}}</th> -->
+                <!-- <th class="col-md-2">{{{ Lang::get('media/table.media_title') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.media_type') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.lang') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.freq') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.circulation') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.readership_type') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.section_color') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.page') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.article') }}}</th> -->
                 <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
             </tr>
         </thead>
@@ -44,11 +56,11 @@
                 "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page [media]"
+                    "sLengthMenu": "_MENU_ records per page [article]"
                 },
                 "bProcessing": true,
                 "bServerSide": true,
-                "sAjaxSource": "{{ URL::to('media/category/data') }}",
+                "sAjaxSource": "{{ URL::to('media/article/data') }}",
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                 }
