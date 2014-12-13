@@ -1,5 +1,8 @@
 @extends('admin.layouts.default')
-<div class="page-header">
+
+{{-- Content --}}
+@section('content')
+  <div class="page-header">
   <h3>
     {{ $title }}
     <div class="pull-right">
@@ -7,9 +10,6 @@
     </div>
   </h3>
 </div>
-
-{{-- Content --}}
-@section('content')
   <!-- Tabs -->
     <ul class="nav nav-tabs">
       <li class="active"><a href="#tab-general" data-toggle="tab">General</a></li>
@@ -17,7 +17,7 @@
   <!-- ./ tabs -->
 
   {{-- Edit Blog Form --}}
-  <form class="form-horizontal" method="post" action="@if (isset($category)){{ URL::to('media/category/' . $category->id . '/edit') }}@endif" autocomplete="off">
+  <form class="form-horizontal" method="post" action="@if (isset($article)){{ URL::to('media/article/' . $article->id . '/edit') }}@endif" autocomplete="off">
     <!-- CSRF Token -->
     <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
     <!-- ./ csrf token -->

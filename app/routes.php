@@ -80,6 +80,11 @@ Route::group(array('prefix' => 'media'), function () {
 		Route::get('/category/{category_id}/delete', 'MediaCategoryController@getDelete');
 		Route::post('/category/{category_id}/delete', 'MediaCategoryController@postDelete');
 		Route::get('/article/list', 'MediaArticleController@getIndex');
+		Route::get('/article/create', 'MediaArticleController@getCreate');
+		Route::get('/article/{article_id}/edit', 'MediaArticleController@getEdit');
+		Route::post('/article/{article_id}/edit', 'MediaArticleController@postEdit');
+		Route::get('/article/{article_id}/delete', 'MediaArticleController@getDelete');
+		Route::post('/article/{article_id}/delete', 'MediaArticleController@postDelete');
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
 	});

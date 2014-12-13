@@ -10,7 +10,8 @@ class MediaArticleController extends AdminController {
 	}
 
 	public function getCreate() {
-
+		$title = "Article create";
+		return View::make('media/article/create_edit', compact('title'));
 	}
 
 	public function postCreate() {
