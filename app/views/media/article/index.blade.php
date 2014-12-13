@@ -16,7 +16,8 @@
             {{{ $title }}}
 
             <div class="pull-right">
-                <a href="{{{ URL::to('media/category/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+                <!-- <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a> -->
+                <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
             </div>
         </h3>
     </div>

@@ -1,4 +1,12 @@
-@extends('admin.layouts.modal')
+@extends('admin.layouts.default')
+<div class="page-header">
+  <h3>
+    {{ $title }}
+    <div class="pull-right">
+      <button class="btn btn-default btn-small btn-inverse close_popup"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</button>
+    </div>
+  </h3>
+</div>
 
 {{-- Content --}}
 @section('content')
