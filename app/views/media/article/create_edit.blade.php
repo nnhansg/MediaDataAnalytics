@@ -26,35 +26,35 @@
     <div class="tab-content">
       <!-- General tab -->
       <div class="tab-pane active" id="tab-general">
-        <!-- Category name -->
+        <!-- Article name -->
         <div class="form-group {{{ $errors->has('name') ? 'error' : '' }}}">
                     <div class="col-md-12">
                         <label class="control-label" for="name">Category name</label>
-            <input class="form-control" type="text" name="name" id="name" value="{{{ Input::old('name', isset($category) ? $category->name : null) }}}" />
+            <input class="form-control" type="text" name="name" id="name" value="{{{ Input::old('name', isset($article) ? $article->name : null) }}}" />
             {{{ $errors->first('name', '<span class="help-block">:message</span>') }}}
           </div>
         </div>
-        <!-- ./ category name -->
+        <!-- ./ article name -->
 
-        <!-- Category slug -->
-        <div class="form-group {{{ $errors->has('slug') ? 'error' : '' }}}">
+        <!-- article main_cat -->
+        <div class="form-group {{{ $errors->has('main_cat') ? 'error' : '' }}}">
                     <div class="col-md-12">
-                        <label class="control-label" for="slug">Slug</label>
-            <input class="form-control" type="text" name="slug" id="slug" value="{{{ Input::old('slug', isset($category) ? $category->slug : null) }}}" />
+                        <label class="control-label" for="main_cat">Main cat</label>
+            <input class="form-control" type="text" name="slug" id="slug" value="{{{ Input::old('main_cat', isset($article) ? $article->main_cat : null) }}}" />
             {{{ $errors->first('slug', '<span class="help-block">:message</span>') }}}
           </div>
         </div>
-        <!-- ./ category slug -->
+        <!-- ./ article main_Cat -->
 
-        <!-- Options -->
-        <div class="form-group {{{ $errors->has('options') ? 'has-error' : '' }}}">
+        <!-- Company brand -->
+        <div class="form-group {{{ $errors->has('company_brand') ? 'has-error' : '' }}}">
           <div class="col-md-12">
-                        <label class="control-label" for="options">Options</label>
-            <input class="form-control full-width" name="options" value="options" rows="10">{{{ Input::old('options', isset($category) ? $category->option : null) }}}</input>
-            {{{ $errors->first('options', '<span class="help-block">:message</span>') }}}
+                        <label class="control-label" for="company_brand">Options</label>
+            <input class="form-control full-width" name="company_brand" value="company_brand" rows="10">{{{ Input::old('company_brand', isset($article) ? $article->company_brand : null) }}}</input>
+            {{{ $errors->first('company_brand', '<span class="help-block">:message</span>') }}}
           </div>
         </div>
-        <!-- ./ options -->
+        <!-- ./ company brand -->
       </div>
       <!-- ./ general tab -->
     </div>
