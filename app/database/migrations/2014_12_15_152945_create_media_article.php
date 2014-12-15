@@ -14,14 +14,17 @@ class CreateMediaArticle extends Migration {
 		Schema::create('media_article', function (Blueprint $table) {
 				$table->increments('id');
 				$table->string('name')->nullable()->index();
-				$table->string('content')->nullable();
+				$table->text('content')->nullable();
 				$table->string('category_ids')->default('');
-				$table->string('category_names')->default('');
+				$table->text('category_names')->default('');
 				$table->string('category_sids')->default('');
 				$table->string('main_cat')->default('');
-				$table->string('company_brand')->default('');
-				$table->string('sub_cat_main_ind')->nullable();
-				$table->string('sub_ind_headline')->nullable();
+				$table->string('company')->default('');
+				$table->string('brand')->default('');
+				$table->string('sub_cat')->nullable();
+				$table->string('main_ind')->nullable();
+				$table->string('sub_ind')->nullable();
+				$table->string('headline')->nullable();
 				$table->string('original_link')->nullable();
 				$table->string('fileName')->nullable();
 				$table->string('media_title')->nullable();
@@ -32,8 +35,7 @@ class CreateMediaArticle extends Migration {
 				$table->string('readership_type')->nullable();//Readership/Viewership/Listenership
 				$table->string('section_color')->nullable();
 				$table->string('page')->nullable();
-				$table->string('article')->nullable();
-				$table->string('size_duration')->nullable();
+				$table->string('article_size_duration')->nullable();
 				$table->string('total_size')->nullable();
 				$table->integer('advalue')->unsigned()->default(0);
 				$table->integer('mention')->unsigned()->default(0);
@@ -45,6 +47,7 @@ class CreateMediaArticle extends Migration {
 				$table->string('tone')->nullable();
 				$table->string('gist')->nullable();
 				$table->string('source')->nullable();
+				$table->datetime('collected_data_date')->nullable();
 				$table->timestamps();
 			});
 	}

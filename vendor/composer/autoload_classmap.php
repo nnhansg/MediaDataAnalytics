@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AddCollectedDataDateToMediaArticle' => $baseDir . '/app/database/migrations/2014_12_08_063727_add_collected_data_date_to_media_article.php',
     'AdminBlogsController' => $baseDir . '/app/controllers/admin/AdminBlogsController.php',
     'AdminCommentsController' => $baseDir . '/app/controllers/admin/AdminCommentsController.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
@@ -53,7 +52,7 @@ return array(
     'CommentsTableSeeder' => $baseDir . '/app/database/seeds/CommentsTableSeeder.php',
     'ConfideSetupUsersTable' => $baseDir . '/app/database/migrations/2013_02_05_024934_confide_setup_users_table.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2013_02_05_044505_create_comments_table.php',
-    'CreateMediaArticle' => $baseDir . '/app/database/migrations/2014_12_07_034506_create_media_article.php',
+    'CreateMediaArticle' => $baseDir . '/app/database/migrations/2014_12_15_152945_create_media_article.php',
     'CreateMediaCategory' => $baseDir . '/app/database/migrations/2014_12_06_082303_create_media_category.php',
     'CreatePostsTable' => $baseDir . '/app/database/migrations/2013_02_05_043505_create_posts_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
@@ -464,6 +463,7 @@ return array(
     'LaravelBook\\Ardent\\InvalidModelException' => $vendorDir . '/laravelbook/ardent/src/LaravelBook/Ardent/InvalidModelException.php',
     'LaravelBook\\Ardent\\Providers\\ArdentServiceProvider' => $vendorDir . '/laravelbook/ardent/src/LaravelBook/Ardent/Providers/ArdentServiceProvider.php',
     'Math_BigInteger' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Math/BigInteger.php',
+    'MediaArticle' => $baseDir . '/app/models/MediaArticle.php',
     'MediaArticleController' => $baseDir . '/app/controllers/media/MediaArticleController.php',
     'MediaCategory' => $baseDir . '/app/models/MediaCategory.php',
     'MediaCategoryController' => $baseDir . '/app/controllers/media/MediaCategoryController.php',

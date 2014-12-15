@@ -1,9 +1,9 @@
 <?php
 class MediaArticleController extends AdminController {
 	public function getIndex() {
-		$article       = new MediaArticle;
-		$article->name = "Noi dung 1";
-		$article->save();
+		// $article       = new MediaArticle;
+		// $article->name = "Noi dung 1";
+		// $article->save();
 		// $articles = MediaArticle::all();
 		// $index    = 0;
 		// foreach ($articles as $article) {
@@ -65,7 +65,7 @@ class MediaArticleController extends AdminController {
 	}
 
 	public function getListData() {
-		$f_article = array('id', 'name', 'sub_ind_headline');
+		$f_article = array('id', 'sub_ind_headline');
 		$articles  = MediaArticle::select($f_article);
 		return Datatables::of($articles)
 		// ->remove_column('id')
@@ -75,5 +75,11 @@ class MediaArticleController extends AdminController {
 	public function getListReport() {
 		$title = "List report";
 		return View::make('media/article/list_report', compact('title'));
+	}
+
+	public function getListDetail($article_id) {
+		$title   = "List detail";
+		$article = MediaArticle::find($article_id);
+		return View::make('media/article/list_detail', compact('title', 'article'));
 	}
 }

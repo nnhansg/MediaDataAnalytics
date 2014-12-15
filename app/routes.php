@@ -87,6 +87,7 @@ Route::group(array('prefix' => 'media'), function () {
 		Route::post('/article/{article_id}/delete', 'MediaArticleController@postDelete');
 		Route::get('/article/list-report', 'MediaArticleController@getListReport');
 		Route::get('/article/listdata', 'MediaArticleController@getListData');
+		Route::get('/article/listdetail/{article_id}', 'MediaArticleController@getListDetail');
 		// Route::get('/article/list-report/{article_id}', 'MediaArticleController@getListReport');
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');

@@ -29,7 +29,55 @@
         </table>
     </div>
     <div class="col-md-9">
-        <h1>Noi dung</h1>
+        <h3>{{$article->sub_ind_headline}}</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>main_cat</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->main_cat}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>company_brand</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->company_brand}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>sub_cat_main_ind</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->sub_cat_main_ind}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>media_title</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->media_title}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>media_type</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->media_type}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>original_link</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->original_link}}
+            </div>
+        </div>
     </div>
 @stop
 
@@ -53,7 +101,8 @@
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                 },
                 "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-                    $('td:eq(1)', nRow).html('<a href="/media/article/listdetail/' + aData[0] + '">' + aData[1] + '</a>');
+                    $('td:eq(1)', nRow).html('<a href="/media/article/listdetail/' + aData[0] + '">' +
+                        aData[1] + '</a>');
                     $('td:eq(0)', nRow).html('').addClass('hide');
                     return nRow;
                 }
@@ -64,7 +113,7 @@
 @stop
 
 <!-- "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
-                    $('td:eq(1)', nRow).html('<a href="media/article/listdata?article_id=' + aData[0] + '">' +
-                        aData[0] + '</a>');
-                    return nRow;
-                } -->
+    $('td:eq(1)', nRow).html('<a href="media/article/listdata?article_id=' + aData[0] + '">' +
+        aData[0] + '</a>');
+    return nRow;
+} -->
