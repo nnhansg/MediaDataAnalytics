@@ -63,4 +63,9 @@ class MediaArticleController extends AdminController {
 			->remove_column('id')
 			->make();
 	}
+
+	public function getListReport() {
+		$title = "List report";
+		return View::make('media/article/list_report', compact('title'));
+	}
 }
