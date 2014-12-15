@@ -85,10 +85,17 @@ Route::group(array('prefix' => 'media'), function () {
 		Route::post('/article/{article_id}/edit', 'MediaArticleController@postEdit');
 		Route::get('/article/{article_id}/delete', 'MediaArticleController@getDelete');
 		Route::post('/article/{article_id}/delete', 'MediaArticleController@postDelete');
+<<<<<<< HEAD
 		Route::get('/article/list-report', 'MediaArticleController@getListReport');
 		Route::get('/article/listdata', 'MediaArticleController@getListData');
 		Route::get('/article/listdetail/{article_id}', 'MediaArticleController@getListDetail');
 		// Route::get('/article/list-report/{article_id}', 'MediaArticleController@getListReport');
+=======
+
+		Route::get('/article/import', 'MediaArticleController@getImport');
+		Route::post('/article/import', 'MediaArticleController@postImport');
+
+>>>>>>> origin/nhannguyen2
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
 	});
