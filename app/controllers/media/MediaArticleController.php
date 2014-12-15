@@ -63,4 +63,93 @@ class MediaArticleController extends AdminController {
 			->remove_column('id')
 			->make();
 	}
+
+	///
+	public function getImport() {
+		$title = "Import media article";
+
+		return View::make('media/article/import', compact('title'));
+	}
+
+	public function postImport() {
+		$title = "Import media article";
+		global $countRowInserted, $countRowNotInserted, $msg, $result;
+        $countRowInserted = 0;
+    	$countRowNotInserted = 0;
+    	$result = true;
+
+		if (Input::hasFile('fileInput'))
+        {
+            $file = Input::file('fileInput');
+            $path = $file->getRealPath();
+            $name = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $size = $file->getSize();
+            $mime = $file->getMimeType();
+
+            $destinationPath = public_path() . '/imports/';
+            $newFileName = time() . '-' . $name;
+            $file->move($destinationPath, $newFileName);
+
+            Excel::load($destinationPath . $newFileName, function($reader) {
+            	global $countRowInserted, $countRowNotInserted, $msg, $result;
+
+                // Getting all results
+                $results = $reader->get();
+
+                // // Loop through all sheets
+                $reader->each(function($row) {
+                	global $countRowInserted, $countRowNotInserted, $msg, $result;
+
+                    // Import a new media article to media_article table
+                    $mediaArticle = new MediaArticle;
+                    $mediaArticle->main_cat = $row->main_cat;
+                    $mediaArticle->company_brand = $row->company . '|' . $row->brand;
+                    $mediaArticle->sub_cat_main_ind = $row->sub_cat . '|' . $row->main_ind;
+                    $mediaArticle->sub_ind_headline = $row->sub_ind . '|' . $row->headline;
+                    $mediaArticle->original_link = $row->original_link;
+                    $mediaArticle->fileName = $row->filename;
+                    $mediaArticle->media_title = $row->media_title;
+                    $mediaArticle->media_type = $row->media_type;
+                    $mediaArticle->lang = $row->lang;
+                    $mediaArticle->freq = $row->freq;
+                    $mediaArticle->circulation = $row->circulation;
+                    $mediaArticle->readership_type = $row->readershipviewershiplistenership;
+                    $mediaArticle->section_color = $row->section . '|' . $row->color;
+                    $mediaArticle->page = $row->page;
+                    $mediaArticle->article = $row->article_sizeduration;
+                    $mediaArticle->total_size = $row->total_size;
+                    $mediaArticle->advalue = $row->advalue;
+                    $mediaArticle->mention = $row->mention;
+                    $mediaArticle->prvalue = $row->prvalue;
+                    $mediaArticle->journalist = $row->journalist;
+                    $mediaArticle->photono = $row->photono;
+                    $mediaArticle->spoke = $row->spoke_person;
+                    $mediaArticle->tone = $row->tone;
+                    $mediaArticle->gist = $row->gisten;
+
+                    if ($mediaArticle->save()) {
+                        // echo 'Inserted a record...<br />';
+                        $countRowInserted++;
+                    } else {
+                        // echo 'Not inserted a record...<br />';
+                        $countRowNotInserted++;
+                    }
+                });
+
+				$msg = "Inserted " . $countRowInserted . " record.";
+
+				if ($countRowNotInserted > 0) {
+					$msg .= $countRowNotInserted . " have some problems and not insert.";
+				}
+            });
+        } else {
+        	$result = false;
+            $msg = "You need to choose file!";
+        }
+
+        return Redirect::back()->with('msg', $msg)
+        						->with('result', $result);
+		//return View::make('media/article/import', compact('title'));
+	}
 }
