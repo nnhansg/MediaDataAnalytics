@@ -1,9 +1,9 @@
 <?php
 class MediaArticleController extends AdminController {
 	public function getIndex() {
-		// $article       = new MediaArticle;
-		// $article->name = "Noi dung 1";
-		// $article->save();
+		$article       = new MediaArticle;
+		$article->name = "Noi dung 1";
+		$article->save();
 		// $articles = MediaArticle::all();
 		// $index    = 0;
 		// foreach ($articles as $article) {
@@ -61,6 +61,14 @@ class MediaArticleController extends AdminController {
                 <a href="{{{ URL::to(\'media/article/\' . $id . \'/delete\' ) }}}" class="btn btn-xs btn-danger">{{{ Lang::get(\'button.delete\') }}}</a>
             ')
 			->remove_column('id')
+			->make();
+	}
+
+	public function getListData() {
+		$f_article = array('id', 'name', 'sub_ind_headline');
+		$articles  = MediaArticle::select($f_article);
+		return Datatables::of($articles)
+		// ->remove_column('id')
 			->make();
 	}
 

@@ -14,21 +14,13 @@
     <div class="page-header">
         <h3>
             {{{ $title }}}
-
-            <div class="pull-right">
-                <!-- <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a> -->
-                <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
-            </div>
         </h3>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <table id="media" class="table table-striped table-hover">
             <thead>
                 <tr>
-                    <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
-                    <th class="col-md-2">{{{ Lang::get('media/table.main_cat') }}}</th>
-                    <th class="col-md-2">{{{ Lang::get('media/table.company_brand') }}}</th>
-                    <th class="col-md-2">{{{ Lang::get('media/table.sub_cat_main_ind') }}}</th>
+                    <th class="col-md-1 hide">Id</th>
                     <th class="col-md-2">{{{ Lang::get('media/table.sub_ind_headline') }}}</th>
                 </tr>
             </thead>
@@ -36,8 +28,8 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-8">
-
+    <div class="col-md-9">
+        <h1>Noi dung</h1>
     </div>
 @stop
 
@@ -47,18 +39,33 @@
         var oTable;
         $(document).ready(function() {
             oTable = $('#media').dataTable( {
-                "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+                "sDom": "<'row'<'col-md-1'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
                     "sLengthMenu": "_MENU_ records per page [article]"
                 },
-                "bProcessing": true,
+                "bProcessing": false,
                 "bServerSide": true,
-                "sAjaxSource": "{{ URL::to('media/article/datalist') }}",
+                "bPaginate": false,
+                "bInfo": false,
+                "sAjaxSource": "{{ URL::to('media/article/listdata') }}",
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+                },
+                "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+                    $('td:eq(1)', nRow).html('<a href="media/article/listdata?article_id=' + aData[0] + '">' +
+                        aData[1] + '</a>');
+                    $('td:eq(0)', nRow).html('').addClass('hide');
+                    return nRow;
                 }
+
             });
         });
     </script>
 @stop
+
+<!-- "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+                    $('td:eq(1)', nRow).html('<a href="media/article/listdata?article_id=' + aData[0] + '">' +
+                        aData[0] + '</a>');
+                    return nRow;
+                } -->
