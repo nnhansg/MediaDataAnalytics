@@ -1,2 +1,4 @@
 vender/*
 bootstrap/*
+vendor/autoload.php
+*.gitignore

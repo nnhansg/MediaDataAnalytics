@@ -26,14 +26,16 @@ class CreateMediaArticle extends Migration {
 				$table->string('sub_ind')->nullable();
 				$table->string('headline')->nullable();
 				$table->string('original_link')->nullable();
-				$table->string('fileName')->nullable();
+				$table->string('filename')->nullable();
+				$table->string('filename_src')->nullable();
 				$table->string('media_title')->nullable();
 				$table->string('media_type')->nullable();
 				$table->string('lang')->nullable();
 				$table->string('freq')->nullable();
 				$table->string('circulation')->nullable();
 				$table->string('readership_type')->nullable();//Readership/Viewership/Listenership
-				$table->string('section_color')->nullable();
+				$table->string('section')->nullable();
+				$table->string('color')->nullable();
 				$table->string('page')->nullable();
 				$table->string('article_size_duration')->nullable();
 				$table->string('total_size')->nullable();
