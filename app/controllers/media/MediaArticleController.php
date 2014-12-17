@@ -97,17 +97,17 @@ class MediaArticleController extends AdminController {
 
 		if (Input::hasFile('fileInput')) {
 			$file      = Input::file('fileInput');
-			$path      = $file->getRealPath();
+			// $path      = $file->getRealPath();
 			$name      = $file->getClientOriginalName();
-			$extension = $file->getClientOriginalExtension();
-			$size      = $file->getSize();
-			$mime      = $file->getMimeType();
+			// $extension = $file->getClientOriginalExtension();
+			// $size      = $file->getSize();
+			// $mime      = $file->getMimeType();
 
 			$destinationPath = public_path().'/imports/';
 			$newFileName     = time().'-'.$name;
 			$file->move($destinationPath, $newFileName);
 
-			Excel::load($destinationPath.$newFileName, function ($reader) {
+			Excel::load($destinationPath . $newFileName, function ($reader) {
 					global $countRowInserted, $countRowNotInserted, $msg, $result;
 
 					// Getting all results
@@ -170,7 +170,14 @@ class MediaArticleController extends AdminController {
 		                       ->with('result', $result);
 	}
 
+	///
 	public function getExportXLS () {
+		$title = "Export media article";
+		return View::make('media/article/export', compact('title'));
+	}
+
+	///
+	public function postExportXLS () {
         $filenameExport = 'export-' . time();
 
         return
