@@ -48,13 +48,13 @@ class MediaArticleController extends AdminController {
 
 	public function getData() {
 		$f_article = array('id', 'name', 'main_cat', 'company_brand',
-			'sub_cat_main_ind', 'sub_ind_headline', 'original_link', 'media_title',
+			'sub_cat, main_ind', 'sub_ind, headline', 'original_link', 'media_title',
 			'media_type', 'media_type', 'lang', 'freq', 'circulation', 'readership_type',
 			'section_color', 'page', 'article', 'size_duration', 'total_size', 'advalue',
 			'mention', 'prvalue', 'journalist', 'photono', 'spoke', 'person',
 			'tone', 'gist', 'source');
-		$f_article = array('id', 'name', 'main_cat', 'company_brand',
-			'sub_cat_main_ind', 'sub_ind_headline');
+		$f_article = array('id', 'name', 'main_cat', 'company','brand',
+			'headline');
 		$articles = MediaArticle::select($f_article);
 		return Datatables::of($articles)
 			->add_column('actions', '<a href="{{{ URL::to(\'media/article/\' . $id . \'/edit\' ) }}}" class="btn btn-default btn-xs" >{{{ Lang::get(\'button.edit\') }}}</a>
@@ -169,4 +169,85 @@ class MediaArticleController extends AdminController {
 		return Redirect::back()->with('msg', $msg)
 		                       ->with('result', $result);
 	}
+
+	public function getExportXLS () {
+        $filenameExport = 'export-' . time();
+
+        return
+                Excel::create($filenameExport, function($excel) {
+                	$sheetName1 = 'Sheet1';
+
+                    $excel->sheet($sheetName1, function($sheet) {
+                        $sheet->setOrientation('landscape');
+                        $sheet->setPageMargin(0.25);
+                        $sheet->setAllBorders('thin');
+                        $sheet->setAutoFilter('A2:AI2');
+                        $sheet->row(1, array('MIS Report - Dat Xanh Group (1 Dec 2014 - 16 Dec 2014)'));
+                        $sheet->setHeight(1, 50);
+                        $sheet->mergeCells('A1:AI1');
+                        $sheet->setAutoSize(false);
+                        $sheet->setStyle(array(
+						    'font' => array(
+					        	'name' => 'Arial',
+						        'size' => 8
+						    )
+						));
+
+						$sheet->cells('A1:A1', function($cells) {
+							$cells->setFontSize(12);
+							$cells->setFontWeight('bold');
+						});
+
+						$sheet->cells('A2:AI2', function($cells) {
+							$cells->setFontWeight('bold');
+						});
+
+                        $listMediaArticle = MediaArticle::whereRaw('company = ?', array('Abbott'))->get();
+				        $contentSheet1 = array();
+				        $contentSheet1[] = array('Date', 'Main Cat', 'Company', 'Brand', 'Sub Cat', 'Main Ind',
+											'Sub Ind', 'Headline', 'FileName', 'Media Title', 'Media Type',
+											'Program', 'Lang', 'Circulation', 'Readership/Viewership/Listenership',
+											'Section', 'Page', 'Article Size/Duration', 'Total Size', 'AdValue',
+											'Mention', 'PRValue', 'ROI', 'Tonality', 'Journalist', 'Source',
+											'Spoke Person', 'Tone', 'Gist (en)', 'Paragraph', 'SOE',
+											'Paragraph Mentioned', 'Total Paragraph', 'SOEPicture', 'ADVE');
+
+				        $stepRow = 2;
+				        $sheet->row($stepRow, function($row) {
+						    $row->setBackground('#538ed5');
+						});
+
+				        foreach ($listMediaArticle as $mediaArticle) {
+			        		$stepRow++;
+
+			        		if ($stepRow % 2 != 0) {
+			        			$sheet->row($stepRow, function($row) {
+								    $row->setBackground('#ffffff');
+								});
+			        		} else {
+			        			$sheet->row($stepRow, function($row) {
+								    $row->setBackground('#f5f5f5');
+								});
+			        		}
+
+
+				        	$contentSheet1[] = array('', $mediaArticle->main_cat, $mediaArticle->company,
+				        								$mediaArticle->brand, $mediaArticle->sub_cat,
+				        								$mediaArticle->main_ind, $mediaArticle->sub_ind,
+				        								$mediaArticle->headline, $mediaArticle->filename,
+				        								$mediaArticle->media_title, $mediaArticle->media_type,
+				        								'', $mediaArticle->lang, $mediaArticle->circulation,
+				        								$mediaArticle->readership_type, $mediaArticle->section,
+				        								$mediaArticle->page, $mediaArticle->article_size_duration,
+				        								$mediaArticle->total_size, $mediaArticle->AdValue,
+				        								$mediaArticle->mention, $mediaArticle->prvalue,
+				        								'', '', $mediaArticle->journalist, $mediaArticle->source,
+				        								$mediaArticle->spoke, $mediaArticle->tone, $mediaArticle->gist,
+				        								'', '', '', '', '', '');
+						}
+
+                        $sheet->fromArray($contentSheet1, null, 'A2', false, false);
+                    });
+                })->export('xls');
+    }
 }

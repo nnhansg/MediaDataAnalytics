@@ -19,6 +19,7 @@
                 <!-- <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info iframe"><span class="glyphicon glyphicon-plus-sign"></span> Create</a> -->
                 <a href="{{{ URL::to('media/article/create') }}}" class="btn btn-small btn-info"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
                 <a href="{{{ URL::to('media/article/import') }}}" class="btn btn-small btn-info"><span class="glyphicon glyphicon-import"></span> Import</a>
+                <a href="{{{ URL::to('media/article/export-xls') }}}" class="btn btn-small btn-info"><span class="glyphicon glyphicon-export"></span> Export XLS</a>
             </div>
         </h3>
     </div>
@@ -28,9 +29,9 @@
             <tr>
                 <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.main_cat') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.company_brand') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.sub_cat_main_ind') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.sub_ind_headline') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.company') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.brand') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.headline') }}}</th>
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.original_link') }}}</th> -->
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.media_title') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.media_type') }}}</th>
