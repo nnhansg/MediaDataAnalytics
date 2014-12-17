@@ -26,11 +26,13 @@
     <table id="media" class="table table-striped table-hover">
         <thead>
             <tr>
-                <th class="col-md-2">{{{ Lang::get('media/table.name') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.main_cat') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.company_brand') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.sub_cat_main_ind') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.sub_ind_headline') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.company') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.brand') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.sub_cat') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.main_ind') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.sub_ind') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.headline') }}}</th>
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.original_link') }}}</th> -->
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.media_title') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.media_type') }}}</th>
