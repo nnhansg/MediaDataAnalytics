@@ -1,17 +1,19 @@
 <?php
 class MediaArticleController extends AdminController {
 	public function getIndex() {
-		// $article       = new MediaArticle;
-		// $article->name = "Noi dung 1";
+		// $article           = new MediaArticle;
+		// $article->name     = "Noi dung 1";
+		// $article->headline = "Headline 1";
 		// $article->save();
 		// $articles = MediaArticle::all();
 		// $index    = 0;
 		// foreach ($articles as $article) {
 		// 	$index++;
-		// 	$article->main_cat         = "Main cat ".$index;
-		// 	$article->company_brand    = "company brand ".$index;
-		// 	$article->sub_cat_main_ind = "sub cat main ind ".$index;
-		// 	$article->sub_ind_headline = "sub ind headline ".$index;
+		// 	$article->main_cat = "Main cat ".$index;
+		// 	$article->company  = "company ".$index;
+		// 	$article->brand    = "brand ".$index;
+		// 	$article->main_ind = "main ind ".$index;
+		// 	$article->headline = "headline ".$index;
 		// 	$article->save();
 		// }
 
@@ -53,8 +55,8 @@ class MediaArticleController extends AdminController {
 			'section_color', 'page', 'article', 'size_duration', 'total_size', 'advalue',
 			'mention', 'prvalue', 'journalist', 'photono', 'spoke', 'person',
 			'tone', 'gist', 'source');
-		$f_article = array('id', 'name', 'main_cat', 'company','brand',
-			'headline');
+		$f_article = array('id', 'headline', 'main_cat', 'company', 'brand',
+			'main_ind');
 		$articles = MediaArticle::select($f_article);
 		return Datatables::of($articles)
 			->add_column('actions', '<a href="{{{ URL::to(\'media/article/\' . $id . \'/edit\' ) }}}" class="btn btn-default btn-xs" >{{{ Lang::get(\'button.edit\') }}}</a>
@@ -65,7 +67,7 @@ class MediaArticleController extends AdminController {
 	}
 
 	public function getListData() {
-		$f_article = array('id', 'sub_ind_headline');
+		$f_article = array('id', 'headline');
 		$articles  = MediaArticle::select($f_article);
 		return Datatables::of($articles)
 		// ->remove_column('id')

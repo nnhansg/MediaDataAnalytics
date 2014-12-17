@@ -2,43 +2,47 @@
 
 class BlogController extends BaseController {
 
-    /**
-     * Post Model
-     * @var Post
-     */
-    protected $post;
+	/**
+	 * Post Model
+	 * @var Post
+	 */
+	protected $post;
 
-    /**
-     * User Model
-     * @var User
-     */
-    protected $user;
+	/**
+	 * User Model
+	 * @var User
+	 */
+	protected $user;
 
-    /**
-     * Inject the models.
-     * @param Post $post
-     * @param User $user
-     */
-    public function __construct(Post $post, User $user)
-    {
-        parent::__construct();
+	/**
+	 * Inject the models.
+	 * @param Post $post
+	 * @param User $user
+	 */
+	public function __construct(Post $post, User $user) {
+		parent::__construct();
 
-        $this->post = $post;
-        $this->user = $user;
-    }
-    
+		$this->post = $post;
+		$this->user = $user;
+	}
+
 	/**
 	 * Returns all the blog posts.
 	 *
 	 * @return View
 	 */
-	public function getIndex()
-	{
+	public function getIndex() {
 		// Get all the blog posts
 		$posts = $this->post->orderBy('created_at', 'DESC')->paginate(10);
 
 		// Show the page
-		return View::make('site/blog/index', compact('posts'));
+		// return View::make('site/blog/index', compact('posts'));
+
+		$user = Auth::user();
+		if (!empty($user->id)) {
+			return Redirect::to('/media/article/list-report/');
+		}
+		return View::make('site/user/login');
 	}
 
 	/**
@@ -48,14 +52,12 @@ class BlogController extends BaseController {
 	 * @return View
 	 * @throws NotFoundHttpException
 	 */
-	public function getView($slug)
-	{
+	public function getView($slug) {
 		// Get this blog post data
 		$post = $this->post->where('slug', '=', $slug)->first();
 
 		// Check if the blog post exists
-		if (is_null($post))
-		{
+		if (is_null($post)) {
 			// If we ended up in here, it means that
 			// a page or a blog post didn't exist.
 			// So, this means that it is time for
@@ -66,12 +68,12 @@ class BlogController extends BaseController {
 		// Get this post comments
 		$comments = $post->comments()->orderBy('created_at', 'ASC')->get();
 
-        // Get current user and check permission
-        $user = $this->user->currentUser();
-        $canComment = false;
-        if(!empty($user)) {
-            $canComment = $user->can('post_comment');
-        }
+		// Get current user and check permission
+		$user       = $this->user->currentUser();
+		$canComment = false;
+		if (!empty($user)) {
+			$canComment = $user->can('post_comment');
+		}
 
 		// Show the page
 		return View::make('site/blog/view_post', compact('post', 'comments', 'canComment'));
@@ -83,14 +85,12 @@ class BlogController extends BaseController {
 	 * @param  string  $slug
 	 * @return Redirect
 	 */
-	public function postView($slug)
-	{
+	public function postView($slug) {
 
-        $user = $this->user->currentUser();
-        $canComment = $user->can('post_comment');
-		if ( ! $canComment)
-		{
-			return Redirect::to($slug . '#comments')->with('error', 'You need to be logged in to post comments!');
+		$user       = $this->user->currentUser();
+		$canComment = $user->can('post_comment');
+		if (!$canComment) {
+			return Redirect::to($slug.'#comments')->with('error', 'You need to be logged in to post comments!');
 		}
 
 		// Get this blog post data
@@ -98,29 +98,27 @@ class BlogController extends BaseController {
 
 		// Declare the rules for the form validation
 		$rules = array(
-			'comment' => 'required|min:3'
+			'comment' => 'required|min:3',
 		);
 
 		// Validate the inputs
 		$validator = Validator::make(Input::all(), $rules);
 
 		// Check if the form validates with success
-		if ($validator->passes())
-		{
+		if ($validator->passes()) {
 			// Save the comment
-			$comment = new Comment;
+			$comment          = new Comment;
 			$comment->user_id = Auth::user()->id;
 			$comment->content = Input::get('comment');
 
 			// Was the comment saved with success?
-			if($post->comments()->save($comment))
-			{
+			if ($post->comments()->save($comment)) {
 				// Redirect to this blog post page
-				return Redirect::to($slug . '#comments')->with('success', 'Your comment was added with success.');
+				return Redirect::to($slug.'#comments')->with('success', 'Your comment was added with success.');
 			}
 
 			// Redirect to this blog post page
-			return Redirect::to($slug . '#comments')->with('error', 'There was a problem adding your comment, please try again.');
+			return Redirect::to($slug.'#comments')->with('error', 'There was a problem adding your comment, please try again.');
 		}
 
 		// Redirect to this blog post page

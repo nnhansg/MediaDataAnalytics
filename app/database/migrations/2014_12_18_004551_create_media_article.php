@@ -48,8 +48,17 @@ class CreateMediaArticle extends Migration {
 				$table->string('person')->nullable();
 				$table->string('tone')->nullable();
 				$table->string('gist')->nullable();
-				$table->string('source')->nullable();
+				$table->string('program')->default('');
+				$table->string('tonality')->default('');
+				$table->string('paragraph')->default('');
+				$table->string('soe')->default('');
+				$table->string('paragraph_mentioned')->default('');
+				$table->string('total_paragraph')->default('');
+				$table->string('soepicture')->default('');
+				$table->string('adve')->default('');
+				$table->string('spoke_person')->default('');
 				$table->datetime('collected_data_date')->nullable();
+				$table->string('source')->nullable();
 				$table->timestamps();
 			});
 	}

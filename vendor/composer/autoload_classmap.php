@@ -53,7 +53,7 @@ return array(
     'CommentsTableSeeder' => $baseDir . '/app/database/seeds/CommentsTableSeeder.php',
     'ConfideSetupUsersTable' => $baseDir . '/app/database/migrations/2013_02_05_024934_confide_setup_users_table.php',
     'CreateCommentsTable' => $baseDir . '/app/database/migrations/2013_02_05_044505_create_comments_table.php',
-    'CreateMediaArticle' => $baseDir . '/app/database/migrations/2014_12_15_152945_create_media_article.php',
+    'CreateMediaArticle' => $baseDir . '/app/database/migrations/2014_12_18_004551_create_media_article.php',
     'CreateMediaCategory' => $baseDir . '/app/database/migrations/2014_12_06_082303_create_media_category.php',
     'CreatePostsTable' => $baseDir . '/app/database/migrations/2013_02_05_043505_create_posts_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
