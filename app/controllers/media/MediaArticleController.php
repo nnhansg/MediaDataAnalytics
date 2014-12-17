@@ -120,9 +120,12 @@ class MediaArticleController extends AdminController {
 							// Import a new media article to media_article table
 							$mediaArticle = new MediaArticle;
 							$mediaArticle->main_cat = $row->main_cat;
-							$mediaArticle->company_brand = $row->company.'|'.$row->brand;
-							$mediaArticle->sub_cat_main_ind = $row->sub_cat.'|'.$row->main_ind;
-							$mediaArticle->sub_ind_headline = $row->sub_ind.'|'.$row->headline;
+							$mediaArticle->company = $row->company;
+							$mediaArticle->brand = $row->brand;
+							$mediaArticle->sub_cat = $row->sub_cat;
+							$mediaArticle->main_ind = $row->main_ind;
+							$mediaArticle->sub_ind = $row->sub_ind;
+							$mediaArticle->headline = $row->headline;
 							$mediaArticle->original_link = $row->original_link;
 							$mediaArticle->fileName = $row->filename;
 							$mediaArticle->media_title = $row->media_title;
@@ -131,9 +134,10 @@ class MediaArticleController extends AdminController {
 							$mediaArticle->freq = $row->freq;
 							$mediaArticle->circulation = $row->circulation;
 							$mediaArticle->readership_type = $row->readershipviewershiplistenership;
-							$mediaArticle->section_color = $row->section.'|'.$row->color;
+							$mediaArticle->section = $row->section;
+							$mediaArticle->color = $row->color;
 							$mediaArticle->page = $row->page;
-							$mediaArticle->article = $row->article_sizeduration;
+							$mediaArticle->article_size_duration = $row->article_sizeduration;
 							$mediaArticle->total_size = $row->total_size;
 							$mediaArticle->advalue = $row->advalue;
 							$mediaArticle->mention = $row->mention;
@@ -145,10 +149,8 @@ class MediaArticleController extends AdminController {
 							$mediaArticle->gist = $row->gisten;
 
 							if ($mediaArticle->save()) {
-								// echo 'Inserted a record...<br />';
 								$countRowInserted++;
 							} else {
-								// echo 'Not inserted a record...<br />';
 								$countRowNotInserted++;
 							}
 						});
@@ -166,6 +168,5 @@ class MediaArticleController extends AdminController {
 
 		return Redirect::back()->with('msg', $msg)
 		                       ->with('result', $result);
-		//return View::make('media/article/import', compact('title'));
 	}
 }
