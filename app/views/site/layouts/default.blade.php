@@ -70,6 +70,11 @@
 
                     <ul class="nav navbar-nav pull-right">
                         @if (Auth::check())
+                        @if (Auth::user()->hasRole('media'))
+                        <li><a href="{{{ URL::to('media/article/list-report') }}}">Media Panel</a></li>
+                        @endif
+                        @endif
+                        @if (Auth::check())
                         @if (Auth::user()->hasRole('admin'))
                         <li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
                         @endif
@@ -106,7 +111,7 @@
 
 	    <div id="footer">
 	      <div class="container">
-	        <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p>
+	        <p class="muted credit">Data Analytics <a href="http://www.nhantamio.com">nhantamio</a>.</p>
 	      </div>
 	    </div>
 

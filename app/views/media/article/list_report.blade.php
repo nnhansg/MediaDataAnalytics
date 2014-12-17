@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('admin.layouts.media_default')
 
 {{-- Web site Title --}}
 @section('title')
