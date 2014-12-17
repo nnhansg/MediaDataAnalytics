@@ -13,4 +13,10 @@ return array(
 	'company_brand'    => 'Company',
 	'sub_cat_main_ind' => 'Sub cat',
 	'sub_ind_headline' => 'Headline',
+	'headline'         => 'Headline',
+	'company'          => 'Company',
+	'brand'            => 'Brand',
+	'sub_cat'          => 'Sub cat',
+	'main_ind'         => 'Main ind',
+	"sub_ind"          => 'Sub ind',
 );

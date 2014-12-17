@@ -29,7 +29,7 @@
         </table>
     </div>
     <div class="col-md-9">
-        <h3>{{$article->sub_ind_headline}}</h3>
+        <h3>{{$article->headline}}</h3>
         <div class="row">
             <div class="col-md-3">
                 <strong>main_cat</strong>
@@ -40,18 +40,34 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <strong>company_brand</strong>
+                <strong>company</strong>
             </div>
             <div class="col-md-9">
-                {{$article->company_brand}}
+                {{$article->company}}
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
-                <strong>sub_cat_main_ind</strong>
+                <strong>brand</strong>
             </div>
             <div class="col-md-9">
-                {{$article->sub_cat_main_ind}}
+                {{$article->brand}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>sub_cat</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->sub_cat}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <strong>main_ind</strong>
+            </div>
+            <div class="col-md-9">
+                {{$article->main_ind}}
             </div>
         </div>
         <div class="row">
