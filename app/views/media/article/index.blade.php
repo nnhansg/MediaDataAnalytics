@@ -29,12 +29,9 @@
                 <th class="col-md-2">{{{ Lang::get('media/table.headline') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.main_cat') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.company') }}}</th>
-<<<<<<< HEAD
-                <th class="col-md-2">{{{ Lang::get('media/table.brand') }}}</th>                }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.main_ind') }}}</th>
-=======
+
                 <th class="col-md-2">{{{ Lang::get('media/table.brand') }}}</th>
-                <th class="col-md-2">{{{ Lang::get('media/table.headline') }}}</th>
+                <th class="col-md-2">{{{ Lang::get('media/table.main_ind') }}}</th>
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.original_link') }}}</th> -->
                 <!-- <th class="col-md-2">{{{ Lang::get('media/table.media_title') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.media_type') }}}</th>
@@ -45,7 +42,6 @@
                 <th class="col-md-2">{{{ Lang::get('media/table.section_color') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.page') }}}</th>
                 <th class="col-md-2">{{{ Lang::get('media/table.article') }}}</th> -->
->>>>>>> origin/nhannguyen3
                 <th class="col-md-2">{{{ Lang::get('table.actions') }}}</th>
             </tr>
         </thead>
