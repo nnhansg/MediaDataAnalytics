@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'mediaview',
 			'username'  => 'root',
-			'password'  => 'nguyen',
+			'password'  => 'hongnhan',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

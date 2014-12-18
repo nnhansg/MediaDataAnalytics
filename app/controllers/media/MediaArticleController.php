@@ -113,7 +113,7 @@ class MediaArticleController extends AdminController {
 					global $countRowInserted, $countRowNotInserted, $msg, $result;
 
 					// Getting all results
-					$results = $reader->get();
+					// $results = $reader->get();
 
 					// // Loop through all sheets
 					$reader->each(function ($row) {
@@ -121,6 +121,7 @@ class MediaArticleController extends AdminController {
 
 							// Import a new media article to media_article table
 							$mediaArticle = new MediaArticle;
+							$mediaArticle->collected_data_date = $row->date;
 							$mediaArticle->main_cat = $row->main_cat;
 							$mediaArticle->company = $row->company;
 							$mediaArticle->brand = $row->brand;
@@ -129,9 +130,10 @@ class MediaArticleController extends AdminController {
 							$mediaArticle->sub_ind = $row->sub_ind;
 							$mediaArticle->headline = $row->headline;
 							$mediaArticle->original_link = $row->original_link;
-							$mediaArticle->fileName = $row->filename;
+							$mediaArticle->fileName = str_replace(' ', '-', $row->filename);
 							$mediaArticle->media_title = $row->media_title;
 							$mediaArticle->media_type = $row->media_type;
+							$mediaArticle->program = $row->program;
 							$mediaArticle->lang = $row->lang;
 							$mediaArticle->freq = $row->freq;
 							$mediaArticle->circulation = $row->circulation;
@@ -144,11 +146,20 @@ class MediaArticleController extends AdminController {
 							$mediaArticle->advalue = $row->advalue;
 							$mediaArticle->mention = $row->mention;
 							$mediaArticle->prvalue = $row->prvalue;
+							$mediaArticle->roi = $row->roi;
+							$mediaArticle->tonality = $row->tonality;
 							$mediaArticle->journalist = $row->journalist;
+							$mediaArticle->source = $row->source;
 							$mediaArticle->photono = $row->photono;
 							$mediaArticle->spoke = $row->spoke_person;
 							$mediaArticle->tone = $row->tone;
 							$mediaArticle->gist = $row->gisten;
+							$mediaArticle->paragraph = $row->paragraph;
+							$mediaArticle->soe = $row->soe;
+							$mediaArticle->paragraph_mentioned = $row->paragraph_mentioned;
+							$mediaArticle->total_paragraph = $row->total_paragraph;
+							$mediaArticle->soepicture = $row->soepicture;
+							$mediaArticle->adve = $row->adve;
 
 							if ($mediaArticle->save()) {
 								$countRowInserted++;
