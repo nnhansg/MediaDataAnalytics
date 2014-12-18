@@ -145,23 +145,47 @@
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>media_title</td>
+                        <td>media_type</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>media_title</td>
+                        <td>lang</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>media_title</td>
+                        <td>freq</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>media_title</td>
+                        <td>circulation</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>media_title</td>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>readership_type</td>
                         <td>John</td>
                     </tr>
                 </tbody>
