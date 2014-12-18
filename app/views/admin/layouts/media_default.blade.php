@@ -65,9 +65,9 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
                         <ul class="nav navbar-nav">
-                            <li{{ (Request::is('admin') ? ' class="active"' : '') }}><a href="{{{ URL::to('media') }}}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                            <!-- <li{{ (Request::is('admin') ? ' class="active"' : '') }}><a href="{{{ URL::to('media') }}}"><span class="glyphicon glyphicon-home"></span> Home</a></li> -->
                             <li{{ (Request::is('admin/comments*') ? ' class="active"' : '') }}><a href="{{{ URL::to('media/article/list-report') }}}"><span class="glyphicon glyphicon-bullhorn"></span> List report</a></li>
-                            <li class="dropdown{{ (Request::is('admin/users*|admin/roles*') ? ' active' : '') }}">
+                            <!-- <li class="dropdown{{ (Request::is('admin/users*|admin/roles*') ? ' active' : '') }}">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="{{{ URL::to('admin/users') }}}">
                                     <span class="glyphicon glyphicon-user"></span> Media <span class="caret"></span>
                                 </a>
@@ -75,10 +75,10 @@
                                     <li{{ (Request::is('admin/users*') ? ' class="active"' : '') }}><a href="{{{ URL::to('media/category/list') }}}"><span class="glyphicon glyphicon-user"></span> Category</a></li>
                                     <li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('media/article') }}}"><span class="glyphicon glyphicon-user"></span> Article</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                         </ul>
                         <ul class="nav navbar-nav pull-right">
-                            <li><a href="{{{ URL::to('/') }}}">View Homepage</a></li>
+                            <!-- <li><a href="{{{ URL::to('/') }}}">View Homepage</a></li> -->
                             <li class="divider-vertical"></li>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
