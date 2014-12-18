@@ -97,6 +97,9 @@ Route::group(array('prefix' => 'media'), function () {
 		Route::get('/article/export-xls', 'MediaArticleController@getExportXLS');
 		Route::post('/article/export-xls', 'MediaArticleController@postExportXLS');
 
+		Route::get('export', 'MediaReportController@getExport');
+		Route::post('export', 'MediaReportController@postExport');
+
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
 	});
