@@ -95,7 +95,7 @@
             </div>
         </div>
         <!-- begin -->
-        <div class="table-responsive">
+        <div class="table-responsive shadow">
             <table class="table">
                 <thead>
                     <tr>
