@@ -38,6 +38,8 @@
         <link rel="stylesheet" href="{{asset('assets/css/wysihtml5/bootstrap-wysihtml5.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css" />
         <style>
         body {
             padding: 60px 0;
@@ -123,6 +125,7 @@
             $('.wysihtml5').wysihtml5();
         $(prettyPrint);
         </script>
+        <script type="text/javascript" src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js"></script>
         @yield('scripts')
     </body>
 </html>

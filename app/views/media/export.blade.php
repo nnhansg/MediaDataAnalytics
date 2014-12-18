@@ -35,11 +35,6 @@
                   <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                   </span>
               </div>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker1').datetimepicker();
-                  });
-              </script>
             </div>
           </div>
           <div class="form-group">
@@ -50,11 +45,6 @@
                   <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                   </span>
               </div>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker2').datetimepicker();
-                  });
-              </script>
             </div>
           </div>
           <div class="form-group">
@@ -98,73 +88,81 @@
           <div class="form-group">
             <h4>Choose fields for export:</h4>
           </div>
-          <div class="form-group">
-            <label class="checkbox-inline">
-              <input type="checkbox" id="dateCheckbox" value="date"> Date
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="mainCatCheckbox" value="main_cat"> Main Cat
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="companyCheckbox3" value="company"> Company
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="brandCheckbox3" value="brand"> Brand
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="subCoatCheckbox3" value="sub_cat"> Sub Cat
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="mainIndCheckbox3" value="main_ind"> Main Ind
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="headlineCheckbox3" value="healine"> Headline
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="subIndCheckbox" value="sub_ind"> Sub Ind
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="original_linkCheckbox" value="original_link"> Original link
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="media_titleCheckbox" value="media_title"> Media title
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="media_typeCheckbox" value="media_type"> Media type
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="programCheckbox" value="program"> Program
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="langCheckbox" value="lang"> Lang
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="freqCheckbox" value="freq"> freq
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="circulationCheckbox" value="circulation"> Circulation
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="readership_typeCheckbox" value="readership_type"> Readership/Viewership/Listenership
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="sectionCheckbox" value="section"> Section
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="colorCheckbox" value="color"> Color
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="pageCheckbox" value="page"> Page
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="article_size_durationCheckbox" value="article_size_duration"> Article Size/Duration
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="total_sizeCheckbox" value="total_size"> Total Size
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="advalCheckbox" value="adval"> AdVal
-            </label>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="checkbox">
+                <input type="checkbox" id="dateCheckbox" value="date"> Date
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="mainCatCheckbox" value="main_cat"> Main Cat
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="companyCheckbox3" value="company"> Company
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="brandCheckbox3" value="brand"> Brand
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="subCoatCheckbox3" value="sub_cat"> Sub Cat
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="mainIndCheckbox3" value="main_ind"> Main Ind
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="headlineCheckbox3" value="healine"> Headline
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="subIndCheckbox" value="sub_ind"> Sub Ind
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="original_linkCheckbox" value="original_link"> Original link
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="media_titleCheckbox" value="media_title"> Media title
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="media_typeCheckbox" value="media_type"> Media type
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="programCheckbox" value="program"> Program
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="checkbox">
+                <input type="checkbox" id="langCheckbox" value="lang"> Lang
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="freqCheckbox" value="freq"> freq
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="circulationCheckbox" value="circulation"> Circulation
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="readership_typeCheckbox" value="readership_type"> Readership/Viewership/Listenership
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="sectionCheckbox" value="section"> Section
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="colorCheckbox" value="color"> Color
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="pageCheckbox" value="page"> Page
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="article_size_durationCheckbox" value="article_size_duration"> Article Size/Duration
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="total_sizeCheckbox" value="total_size"> Total Size
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" id="advalCheckbox" value="adval"> AdVal
+                </label>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -178,4 +176,20 @@
     </div>
     <!-- ./ form actions -->
   </form>
+@stop
+
+@section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+    });
+
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+
+    $(function () {
+        $('#datetimepicker2').datetimepicker();
+    });
+  </script>
 @stop
