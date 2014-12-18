@@ -87,6 +87,7 @@
                                     <li{{ (Request::is('admin/roles*') ? ' class="active"' : '') }}><a href="{{{ URL::to('media/article') }}}"><span class="glyphicon glyphicon-user"></span> Article</a></li>
                                 </ul>
                             </li>
+                            <li{{ (Request::is('admin/media*') ? ' class="active"' : '') }}><a href="{{{ URL::to('/media/export') }}}"><span class="glyphicon glyphicon-export"></span> Export Media</a></li>
                         </ul>
                         <ul class="nav navbar-nav pull-right">
                             <li><a href="{{{ URL::to('/') }}}">View Homepage</a></li>
