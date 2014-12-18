@@ -94,8 +94,127 @@
                 {{$article->original_link}}
             </div>
         </div>
+        <!-- begin -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Property</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>headline</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>main_cat</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>company</td>
+                        <td>Peter</td>
+                    </tr>
+                    <tr>
+                        <td>brand</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>sub_cat</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>main_ind</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>sub_ind</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>original_link</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>filename</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>media_title</td>
+                        <td>John</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end -->
     </div>
 @stop
+<!--
+main_cat
+company
+brand
+sub_cat
+main_ind
+sub_ind
+headline
+original_link
+filename
+filename_src
+media_title
+media_type
+lang
+freq
+circulation
+readership_type
+section
+color
+page
+article_size_duration
+total_size
+advalue
+mention
+prvalue
+journalist
+photono
+spoke
+person
+tone
+gist
+source
+collected_data_date
+created_at
+updated_at
+program
+tonality
+paragraph
+soe
+paragraph_mentioned
+total_paragraph
+soepicture
+adve
+spoke_person -->
+
 
 {{-- Scripts --}}
 @section('scripts')
