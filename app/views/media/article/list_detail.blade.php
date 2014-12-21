@@ -1,4 +1,4 @@
-@extends('admin.layouts.default')
+@extends('admin.layouts.media_default')
 
 {{-- Web site Title --}}
 @section('title')
@@ -165,27 +165,47 @@
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>section</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>color</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>page</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>article_size_duration</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>total_size</td>
                         <td>John</td>
                     </tr>
                     <tr>
-                        <td>readership_type</td>
+                        <td>advalue</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>advalue</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>advalue</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>advalue</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>advalue</td>
+                        <td>John</td>
+                    </tr>
+                    <tr>
+                        <td>advalue</td>
                         <td>John</td>
                     </tr>
                 </tbody>
