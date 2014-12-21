@@ -91,116 +91,116 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="checkbox">
-                <input type="checkbox" id="dateCheckbox" value="date" checked> Date
+                <input type="checkbox" id="dateCheckbox" value="date" checked="checked"> Date
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="mainCatCheckbox" value="main_cat" checked> Main Cat
+                  <input type="checkbox" id="mainCatCheckbox" value="main_cat" checked="checked"> Main Cat
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="companyCheckbox3" value="company" checked> Company
+                  <input type="checkbox" id="companyCheckbox3" value="company" checked="checked"> Company
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="brandCheckbox3" value="brand" checked> Brand
+                  <input type="checkbox" id="brandCheckbox3" value="brand" checked="checked"> Brand
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="subCoatCheckbox3" value="sub_cat" checked> Sub Cat
+                  <input type="checkbox" id="subCoatCheckbox3" value="sub_cat" checked="checked"> Sub Cat
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="mainIndCheckbox3" value="main_ind" checked> Main Ind
+                  <input type="checkbox" id="mainIndCheckbox3" value="main_ind" checked="checked"> Main Ind
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="headlineCheckbox3" value="healine" checked> Headline
+                  <input type="checkbox" id="headlineCheckbox3" value="healine" checked="checked"> Headline
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="subIndCheckbox" value="sub_ind" checked> Sub Ind
+                  <input type="checkbox" id="subIndCheckbox" value="sub_ind" checked="checked"> Sub Ind
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="original_linkCheckbox" value="original_link" checked> Original link
+                  <input type="checkbox" id="original_linkCheckbox" value="original_link" checked="checked"> Original link
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="media_titleCheckbox" value="media_title" checked> Media title
+                  <input type="checkbox" id="media_titleCheckbox" value="media_title" checked="checked"> Media title
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="media_typeCheckbox" value="media_type" checked> Media type
+                  <input type="checkbox" id="media_typeCheckbox" value="media_type" checked="checked"> Media type
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="programCheckbox" value="program" checked> Program
+                  <input type="checkbox" id="programCheckbox" value="program" checked="checked"> Program
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="langCheckbox" value="lang" checked> Lang
+                  <input type="checkbox" id="langCheckbox" value="lang" checked="checked"> Lang
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="freqCheckbox" value="freq" checked> freq
+                  <input type="checkbox" id="freqCheckbox" value="freq" checked="checked"> freq
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="circulationCheckbox" value="circulation" checked> Circulation
+                  <input type="checkbox" id="circulationCheckbox" value="circulation" checked="checked"> Circulation
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="readership_typeCheckbox" value="readership_type" checked> Readership/Viewership/Listenership
+                  <input type="checkbox" id="readership_typeCheckbox" value="readership_type" checked="checked"> Readership/Viewership/Listenership
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="sectionCheckbox" value="section" checked> Section
+                  <input type="checkbox" id="sectionCheckbox" value="section" checked="checked"> Section
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="colorCheckbox" value="color" checked> Color
+                  <input type="checkbox" id="colorCheckbox" value="color" checked="checked"> Color
                 </label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="checkbox">
-                  <input type="checkbox" id="pageCheckbox" value="page" checked> Page
+                  <input type="checkbox" id="pageCheckbox" value="page" checked="checked"> Page
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="article_size_durationCheckbox" value="article_size_duration" checked> Article Size/Duration
+                  <input type="checkbox" id="article_size_durationCheckbox" value="article_size_duration" checked="checked"> Article Size/Duration
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="total_sizeCheckbox" value="total_size" checked> Total Size
+                  <input type="checkbox" id="total_sizeCheckbox" value="total_size" checked="checked"> Total Size
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="advalCheckbox" value="adval" checked> AdVal
+                  <input type="checkbox" id="advalCheckbox" value="adval" checked="checked"> AdVal
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="mentionCheckbox" value="mention" checked> Mention
+                  <input type="checkbox" id="mentionCheckbox" value="mention" checked="checked"> Mention
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="mentionCheckbox" value="adval" checked> PRValue
+                  <input type="checkbox" id="mentionCheckbox" value="adval" checked="checked"> PRValue
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="roiCheckbox" value="roi" checked> ROI
+                  <input type="checkbox" id="roiCheckbox" value="roi" checked="checked"> ROI
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="tonalityCheckbox" value="tonality" checked> Tonality
+                  <input type="checkbox" id="tonalityCheckbox" value="tonality" checked="checked"> Tonality
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="journalistCheckbox" value="journalist" checked> Journalist
+                  <input type="checkbox" id="journalistCheckbox" value="journalist" checked="checked"> Journalist
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="sourceCheckbox" value="source" checked> Source
+                  <input type="checkbox" id="sourceCheckbox" value="source" checked="checked"> Source
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="spoke_personCheckbox" value="spoke_person" checked> Spoke Person
+                  <input type="checkbox" id="spoke_personCheckbox" value="spoke_person" checked="checked"> Spoke Person
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="toneCheckbox" value="tone" checked> Tone
+                  <input type="checkbox" id="toneCheckbox" value="tone" checked="checked"> Tone
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="paragraphCheckbox" value="paragraph" checked> Paragraph
+                  <input type="checkbox" id="paragraphCheckbox" value="paragraph" checked="checked"> Paragraph
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="soeCheckbox" value="soe" checked> SOE
+                  <input type="checkbox" id="soeCheckbox" value="soe" checked="checked"> SOE
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="paragraph_mentionedCheckbox" value="paragraph_mentioned" checked> Paragraph Mentioned
+                  <input type="checkbox" id="paragraph_mentionedCheckbox" value="paragraph_mentioned" checked="checked"> Paragraph Mentioned
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="total_paragraphCheckbox" value="total_paragraph" checked> Total Paragraph
+                  <input type="checkbox" id="total_paragraphCheckbox" value="total_paragraph" checked="checked"> Total Paragraph
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="soepictureCheckbox" value="soepicture" checked> SOEPicture
+                  <input type="checkbox" id="soepictureCheckbox" value="soepicture" checked="checked"> SOEPicture
                 </label>
                 <label class="checkbox">
-                  <input type="checkbox" id="adveCheckbox" value="adve" checked> ADVE
+                  <input type="checkbox" id="adveCheckbox" value="adve" checked="checked"> ADVE
                 </label>
               </div>
             </div>
@@ -231,7 +231,12 @@
       });
 
       $('.checkall').click(funtion() {
-        // $('.choose-fields input[type=checkbox]');
+        // alert('checkall');
+        // $('.choose-fields input[type=checkbox]').prop('checked', true);
+      });
+
+      $('.uncheckall').click(funtion() {
+        // $('.choose-fields input[type=checkbox]').prop('checked', false);
       });
     });
   </script>
