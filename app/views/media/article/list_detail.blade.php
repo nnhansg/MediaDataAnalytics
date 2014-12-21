@@ -320,7 +320,7 @@ spoke_person -->
                 "bPaginate": true,
                 "bInfo": true,
                 "sAjaxSource": "{{ URL::to('media/article/listdata') }}",
-                "iDisplayLength": 25,
+                "iDisplayLength": 22,
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                 },
