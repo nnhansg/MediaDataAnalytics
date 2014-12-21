@@ -20,6 +20,10 @@ class MediaReportController extends AdminController {
 
         $filenameExport = 'export-'.time();
 
+        if ($input['export_type'] == 'xls'
+            || $input['export_type'] == 'xlsx'
+            || $input['export_type'] == 'csv')
+
         return
         Excel::create($filenameExport, function ($excel) use($input) {
                 $sheetName1 = 'Sheet1';
@@ -29,7 +33,9 @@ class MediaReportController extends AdminController {
                         $sheet->setPageMargin(0.25);
                         $sheet->setAllBorders('thin');
                         $sheet->setAutoFilter('A2:AI2');
-                        $sheet->row(1, array('MIS Report - ' . $input['company'] . ' (' . $input['from_date'] . ' - ' . $input['to_date'] . ')'));
+                        $sheet->row(1, array('MIS Report - ' . $input['company'] . ' (' .
+                                    date('d M y', strtotime($input['from_date'])) .
+                                    ' - ' . date('d M y', strtotime($input['to_date'])) . ')'));
                         $sheet->setHeight(1, 50);
                         $sheet->mergeCells('A1:AI1');
                         $sheet->setAutoSize(false);
@@ -49,7 +55,18 @@ class MediaReportController extends AdminController {
                                 $cells->setFontWeight('bold');
                             });
 
-                        $listMediaArticle = MediaArticle::whereRaw('company = ?', array($input['company']))->get();
+                        $whereRawMediaArticle = strtotime($input['from_date']) . ' <= UNIX_TIMESTAMP(collected_data_date) and UNIX_TIMESTAMP(collected_data_date) <= ' . strtotime($input['to_date']);
+
+                        if ($input['company'] != 'All') {
+                            $whereRawMediaArticle .= " and company = '" . $input['company'] . "'";
+                        }
+
+                        if ($input['media_type'] != 'All') {
+                            $whereRawMediaArticle .= " and media_type = '" . $input['media_type'] . "'";
+                        }
+
+                        $listMediaArticle = MediaArticle::whereRaw($whereRawMediaArticle)->get();
+
                         $contentSheet1 = array();
                         $contentSheet1[] = array('Date', 'Main Cat', 'Company', 'Brand', 'Sub Cat', 'Main Ind',
                             'Sub Ind', 'Headline', 'FileName', 'Media Title', 'Media Type',
@@ -77,23 +94,30 @@ class MediaReportController extends AdminController {
                                     });
                             }
 
-                            $contentSheet1[] = array($mediaArticle->collected_data_date, $mediaArticle->main_cat, $mediaArticle->company,
+                            $contentSheet1[] = array(date('d-M-y', strtotime($listMediaArticle[0]->collected_data_date)),
+                                $mediaArticle->main_cat, $mediaArticle->company,
                                 $mediaArticle->brand, $mediaArticle->sub_cat,
                                 $mediaArticle->main_ind, $mediaArticle->sub_ind,
-                                $mediaArticle->headline, $mediaArticle->filename,
+                                $mediaArticle->headline, Request::root() . '/media/export/download/VT_818_' . $mediaArticle->filename . '.pdf',
                                 $mediaArticle->media_title, $mediaArticle->media_type,
-                                '', $mediaArticle->lang, $mediaArticle->circulation,
+                                $mediaArticle->program, $mediaArticle->lang, $mediaArticle->circulation,
                                 $mediaArticle->readership_type, $mediaArticle->section,
                                 $mediaArticle->page, $mediaArticle->article_size_duration,
                                 $mediaArticle->total_size, $mediaArticle->AdValue,
                                 $mediaArticle->mention, $mediaArticle->prvalue,
-                                '', '', $mediaArticle->journalist, $mediaArticle->source,
+                                $mediaArticle->roi, $mediaArticle->tonality, $mediaArticle->journalist, $mediaArticle->source,
                                 $mediaArticle->spoke, $mediaArticle->tone, $mediaArticle->gist,
-                                '', '', '', '', '', '');
+                                $mediaArticle->paragraph, $mediaArticle->soe, $mediaArticle->paragraph_mentioned,
+                                $mediaArticle->total_paragraph, $mediaArticle->soepicture, $mediaArticle->adve);
                         }
 
                         $sheet->fromArray($contentSheet1, null, 'A2', false, false);
                     });
-            })->export('xls');
+            })->export($input['export_type']);
+    }
+
+    ///
+    public function getExportDownload($file) {
+        return Response::download(public_path() . '/report-pdf/' . $file);
     }
 }

@@ -39,7 +39,8 @@
         <link rel="stylesheet" href="{{asset('assets/css/datatables-bootstrap.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/colorbox.css')}}">
 
-        <link rel="stylesheet" type="text/css" media="screen" href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css" />
+        {{ HTML::style('bootstrap-datepicker/css/datepicker3.css') }}
+
         <style>
         body {
             padding: 60px 0;
@@ -123,9 +124,14 @@
         <script src="{{asset('assets/js/prettify.js')}}"></script>
         <script type="text/javascript">
             $('.wysihtml5').wysihtml5();
-        $(prettyPrint);
+            $(prettyPrint);
         </script>
-        <script type="text/javascript" src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js"></script>
+        {{ HTML::script('bootstrap-datepicker/js/bootstrap-datepicker.js') }}
+        <script type="text/javascript">
+            $('.datepicker').datepicker({
+                format: 'yyyy/mm/dd'
+            })
+        </script>
         @yield('scripts')
     </body>
 </html>
