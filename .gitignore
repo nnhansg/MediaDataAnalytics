@@ -1,6 +1,0 @@
-vender/*
-bootstrap/*
-vendor/autoload.php
-vendor/composer/*
-*.gitignore
-public/imports/*
