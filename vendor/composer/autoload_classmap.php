@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'AddProgramToMediaArticle' => $baseDir . '/app/database/migrations/2014_12_17_154112_add_program_to_media_article.php',
+    'AddRoiToMediaArticle' => $baseDir . '/app/database/migrations/2014_12_22_015140_add_roi_to_media_article.php',
     'AdminBlogsController' => $baseDir . '/app/controllers/admin/AdminBlogsController.php',
     'AdminCommentsController' => $baseDir . '/app/controllers/admin/AdminCommentsController.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',
@@ -495,6 +495,7 @@ return array(
     'MediaArticleController' => $baseDir . '/app/controllers/media/MediaArticleController.php',
     'MediaCategory' => $baseDir . '/app/models/MediaCategory.php',
     'MediaCategoryController' => $baseDir . '/app/controllers/media/MediaCategoryController.php',
+    'MediaReportController' => $baseDir . '/app/controllers/media/MediaReportController.php',
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
     'Mockery\\Adapter\\Phpunit\\TestListener' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/TestListener.php',
     'Mockery\\CompositeExpectation' => $vendorDir . '/mockery/mockery/library/Mockery/CompositeExpectation.php',
