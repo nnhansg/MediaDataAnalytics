@@ -310,15 +310,15 @@ spoke_person -->
         var oTable;
         $(document).ready(function() {
             oTable = $('#media').dataTable( {
-                "sDom": "<'row'<'col-md-1'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+                "sDom": "<'row'<'col-md-12'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page [article]"
+                    "sLengthMenu": "_MENU_ records"
                 },
-                "bProcessing": false,
-                "bServerSide": true,
+                "bProcessing": true,
+                "bServerSide": false,
                 "bPaginate": false,
-                "bInfo": false,
+                "bInfo": true,
                 "sAjaxSource": "{{ URL::to('media/article/listdata') }}",
                 "iDisplayLength": 50,
                 "fnDrawCallback": function ( oSettings ) {
