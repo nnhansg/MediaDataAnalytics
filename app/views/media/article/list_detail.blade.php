@@ -316,7 +316,7 @@ spoke_person -->
                     "sLengthMenu": "_MENU_ records"
                 },
                 "bProcessing": true,
-                "bServerSide": false,
+                "bServerSide": true,
                 "bPaginate": true,
                 "bInfo": true,
                 "sAjaxSource": "{{ URL::to('media/article/listdata') }}",

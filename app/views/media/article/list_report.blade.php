@@ -29,7 +29,7 @@
         </table>
     </div>
     <div class="col-md-9">
-        <h1>Noi dung</h1>
+
     </div>
 @stop
 
@@ -39,15 +39,16 @@
         var oTable;
         $(document).ready(function() {
             oTable = $('#media').dataTable( {
-                "sDom": "<'row'<'col-md-1'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-6'i><'col-md-6'p>>",
+                "sDom": "<'row'<'col-md-1 hide'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
-                    "sLengthMenu": "_MENU_ records per page [article]"
+                    "sLengthMenu": "_MENU_ records"
                 },
-                "bProcessing": false,
+                "bProcessing": true,
                 "bServerSide": true,
-                "bPaginate": false,
-                "bInfo": false,
+                "bPaginate": true,
+                "bInfo": true,
+                "iDisplayLength": 22,
                 "sAjaxSource": "{{ URL::to('media/article/listdata') }}",
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
