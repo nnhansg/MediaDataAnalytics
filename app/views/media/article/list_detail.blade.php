@@ -310,17 +310,17 @@ spoke_person -->
         var oTable;
         $(document).ready(function() {
             oTable = $('#media').dataTable( {
-                "sDom": "<'row'<'col-md-12'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
+                "sDom": "<'row'<'col-md-12 hide'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
                     "sLengthMenu": "_MENU_ records"
                 },
                 "bProcessing": true,
                 "bServerSide": false,
-                "bPaginate": false,
+                "bPaginate": true,
                 "bInfo": true,
                 "sAjaxSource": "{{ URL::to('media/article/listdata') }}",
-                "iDisplayLength": 20,
+                "iDisplayLength": 25,
                 "fnDrawCallback": function ( oSettings ) {
                     $(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
                 },
