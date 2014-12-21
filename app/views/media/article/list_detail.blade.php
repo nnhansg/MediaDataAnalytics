@@ -30,7 +30,7 @@
     </div>
     <div class="col-md-9">
         <h3>{{$article->headline}}</h3>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-3">
                 <strong>main_cat</strong>
             </div>
@@ -93,120 +93,164 @@
             <div class="col-md-9">
                 {{$article->original_link}}
             </div>
-        </div>
+        </div> -->
         <!-- begin -->
         <div class="table-responsive shadow">
             <table class="table">
                 <thead>
                     <tr>
-                        <th class="col-md-2">Property</th>
+                        <th class="col-md-3">Property</th>
                         <th>Value</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>headline</td>
-                        <td>John</td>
+                        <td>{{$article->headline}}</td>
                     </tr>
                     <tr>
                         <td>main_cat</td>
-                        <td>John</td>
+                        <td>{{$article->main_cat}}</td>
                     </tr>
                     <tr>
                         <td>company</td>
-                        <td>Peter</td>
+                        <td>{{$article->company}}</td>
                     </tr>
                     <tr>
                         <td>brand</td>
-                        <td>John</td>
+                        <td>{{$article->brand}}</td>
                     </tr>
                     <tr>
                         <td>sub_cat</td>
-                        <td>John</td>
+                        <td>{{$article->sub_cat}}</td>
                     </tr>
                     <tr>
                         <td>main_ind</td>
-                        <td>John</td>
+                        <td>{{$article->main_ind}}</td>
                     </tr>
                     <tr>
                         <td>sub_ind</td>
-                        <td>John</td>
+                        <td>{{$article->sub_ind}}</td>
                     </tr>
                     <tr>
                         <td>original_link</td>
-                        <td>John</td>
+                        <td>{{$article->original_link}}</td>
                     </tr>
                     <tr>
                         <td>filename</td>
-                        <td>John</td>
+                        <td>{{$article->filename}}</td>
                     </tr>
                     <tr>
                         <td>media_title</td>
-                        <td>John</td>
+                        <td>{{$article->media_title}}</td>
                     </tr>
                     <tr>
                         <td>media_type</td>
-                        <td>John</td>
+                        <td>{{$article->media_type}}</td>
                     </tr>
                     <tr>
                         <td>lang</td>
-                        <td>John</td>
+                        <td>{{$article->lang}}</td>
                     </tr>
                     <tr>
                         <td>freq</td>
-                        <td>John</td>
+                        <td>{{$article->freq}}</td>
                     </tr>
                     <tr>
                         <td>circulation</td>
-                        <td>John</td>
+                        <td>{{$article->circulation}}</td>
                     </tr>
                     <tr>
                         <td>readership_type</td>
-                        <td>John</td>
+                        <td>{{$article->readership_type}}</td>
                     </tr>
                     <tr>
                         <td>section</td>
-                        <td>John</td>
+                        <td>{{$article->section}}</td>
                     </tr>
                     <tr>
                         <td>color</td>
-                        <td>John</td>
+                        <td>{{$article->color}}</td>
                     </tr>
                     <tr>
                         <td>page</td>
-                        <td>John</td>
+                        <td>{{$article->page}}</td>
                     </tr>
                     <tr>
                         <td>article_size_duration</td>
-                        <td>John</td>
+                        <td>{{$article->article_size_duration}}</td>
                     </tr>
                     <tr>
                         <td>total_size</td>
-                        <td>John</td>
+                        <td>{{$article->total_size}}</td>
                     </tr>
                     <tr>
                         <td>advalue</td>
-                        <td>John</td>
+                        <td>{{$article->advalue}}</td>
                     </tr>
                     <tr>
-                        <td>advalue</td>
-                        <td>John</td>
+                        <td>mention</td>
+                        <td>{{$article->mention}}</td>
                     </tr>
                     <tr>
-                        <td>advalue</td>
-                        <td>John</td>
+                        <td>prvalue</td>
+                        <td>{{$article->prvalue}}</td>
                     </tr>
                     <tr>
-                        <td>advalue</td>
-                        <td>John</td>
+                        <td>journalist</td>
+                        <td>{{$article->journalist}}</td>
                     </tr>
                     <tr>
-                        <td>advalue</td>
-                        <td>John</td>
+                        <td>photono</td>
+                        <td>{{$article->photono}}</td>
                     </tr>
                     <tr>
-                        <td>advalue</td>
-                        <td>John</td>
+                        <td>spoke</td>
+                        <td>{{$article->spoke}}</td>
+                    </tr>
+                    <tr>
+                        <td>person</td>
+                        <td>{{$article->person}}</td>
+                    </tr>
+                    <tr>
+                        <td>tone</td>
+                        <td>{{$article->tone}}</td>
+                    </tr>
+                    <tr>
+                        <td>gist</td>
+                        <td>{{$article->gist}}</td>
+                    </tr>
+                    <tr>
+                        <td>program</td>
+                        <td>{{$article->program}}</td>
+                    </tr>
+                    <tr>
+                        <td>tonality</td>
+                        <td>{{$article->tonality}}</td>
+                    </tr>
+                    <tr>
+                        <td>paragraph</td>
+                        <td>{{$article->paragraph}}</td>
+                    </tr>
+                    <tr>
+                        <td>soe</td>
+                        <td>{{$article->soe}}</td>
+                    </tr>
+                    <tr>
+                        <td>paragraph_mentioned</td>
+                        <td>{{$article->paragraph_mentioned}}</td>
+                    </tr>
+                    <tr>
+                        <td>total_paragraph</td>
+                        <td>{{$article->total_paragraph}}</td>
+                    </tr>
+                    <tr>
+                        <td>soepicture</td>
+                        <td>{{$article->soepicture}}</td>
+                    </tr>
+                    <tr>
+                        <td>adve</td>
+                        <td>{{$article->adve}}</td>
                     </tr>
                 </tbody>
             </table>
