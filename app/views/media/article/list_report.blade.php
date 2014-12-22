@@ -39,7 +39,7 @@
         var oTable;
         $(document).ready(function() {
             oTable = $('#media').dataTable( {
-                "sDom": "<'row'<'col-md-1 hide'l><'col-md-11 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
+                "sDom": "<'row'<'col-md-1 hide'l><'col-md-12 pull-left'f>r>t<'row'<'col-md-12'i><'col-md-12'p>>",
                 "sPaginationType": "bootstrap",
                 "oLanguage": {
                     "sLengthMenu": "_MENU_ records"
