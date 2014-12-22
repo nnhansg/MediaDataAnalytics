@@ -16,7 +16,7 @@
             {{{ $title }}}
         </h3>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <table id="media" class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -28,7 +28,7 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
         <h3>{{$article->headline}}</h3>
         <!-- <div class="row">
             <div class="col-md-3">
