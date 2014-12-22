@@ -99,6 +99,7 @@ Route::group(array('prefix' => 'media'), function () {
 
 		Route::get('export', 'MediaReportController@getExport');
 		Route::post('export', 'MediaReportController@postExport');
+		Route::get('export/download/{file}', 'MediaReportController@getExportDownload');
 
 		Route::controller('category', 'MediaCategoryController');
 		Route::controller('article', 'MediaArticleController');
